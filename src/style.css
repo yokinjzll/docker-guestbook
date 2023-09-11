@@ -1,0 +1,35 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+}
+
+.form-item {
+    margin: 0;
+}
+
+.comment {
+    margin: 1em 0;
+    border: 1px solid rgba(7,35,26,0.89);
+}
+
+.row {
+    display: flex;
+    padding: 0 1em;
+}
+
+.comment-header {
+    color: rgba(190,116,112,0.89);
+    justify-content: space-between;
+}
+
+.bg-com-head {
+    background-color: rgba(2,5,15,0.89);
+}
+.bg-com-txt {
+    background-color: rgba(6,38,17,0.84);
+}
+
+.comment-text {
+    color: rgba(155, 199, 165, 0.9);
+}
