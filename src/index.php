@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -19,13 +21,14 @@
 
 <div>
     <p>Оставить комментарий: </p>
-    <form action="sendComment.php" class="form">
-        <label for="nameInput">Имя:</label>
-        <input class="form-item" type="text" name="nameInput" id="nameInput" placeholder="Имя">
+    <form action="sendComment.php"  method="post" class="form">
+        <label for="name">Имя:</label>
+        <input class="form-item" type="text" name="comment[name]" id="nameInput" placeholder="Имя">
         <label for="emailInput">Почта:</label>
-        <input class="form-item" type="email" name="emailInput" id="emailInput" placeholder="E-mail">
-        <label for="commentInput">Комментарий:</label>
-        <textarea class="form-item" name="commentInput" id="commentInput" cols="30" rows="10" placeholder="Всем привет..."></textarea>
+        <input class="form-item" type="email" name="comment[email]" id="emailInput" placeholder="E-mail">
+        <label for="commentText">Комментарий:</label>
+        <textarea class="form-item" name="comment[text]" id="commentInput" cols="30" rows="10" placeholder="Всем привет..."></textarea>
+        <input type="submit" value="Отправить">
     </form>
 </div>
 
