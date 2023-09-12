@@ -1,5 +1,7 @@
 <?php
 
+require_once 'handlers.php';
+
 session_start();
 
 ?>
@@ -36,25 +38,21 @@ session_start();
 
 <h2>Комментарии посетителей:</h2>
 
-<div class="comment">
-    <div class="row comment-header bg-com-head">
-        <p class="header-text">Name</p>
-        <p class="time-text">15.08.23 15:23</p>
-    </div>
-    <div class="row bg-com-txt">
-        <p class="comment-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores consectetur culpa cumque dicta, dignissimos distinctio dolore esse, exercitationem laboriosam magni nihil nobis quae quaerat reprehenderit repudiandae sunt tempora. Commodi, ipsa.</p>
-    </div>
-</div>
+<?php
 
+$comments = getAllComments();
+
+foreach($comments as $row) { ?>
 <div class="comment">
     <div class="row comment-header bg-com-head">
-        <p class="header-text">Name</p>
-        <p class="time-text">12.08.23 10:54</p>
+        <p class="header-text"><?php echo $row['username']; ?></p>
+        <p class="time-text"><?php echo $row['created_at']; ?></p>
     </div>
     <div class="row bg-com-txt">
-        <p class="comment-text">Consectetur expedita in iste laudantium nisi, pariatur soluta? At autem dolore eaque facilis fugiat hic, incidunt maiores maxime odio, sequi soluta, velit.</p>
+        <p class="comment-text"><?php echo $row['comment_text']; ?></p>
     </div>
 </div>
+<?php } ?>
 
 </body>
 </html>
